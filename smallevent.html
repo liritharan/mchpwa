@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Madras Coffee House</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel='stylesheet' href='./style.css' type='text/css' media='all' />
+
+  <script type="text/javascript">
+    function Functionc() {
+  var x = document.getElementById("myinpc");
+  var y = document.getElementById("myinc");
+  var z = document.getElementById("footer");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.style.display = "none";
+    z.style.display = "block";
+  } else {
+    x.style.display = "none";
+    y.style.display = "block";
+  }
+}
+
+function Functiont() {
+  var a = document.getElementById("myinpt");
+  var b = document.getElementById("myint");
+  var c = document.getElementById("footer");
+  if (a.style.display === "none") {
+    a.style.display = "block";
+    b.style.display = "none";
+    c.style.display = "block";
+  } else {
+    a.style.display = "none";
+    b.style.display = "block";
+  }  
+}
+
+function Functionm() {
+  var p = document.getElementById("myinpm");
+  var q = document.getElementById("myinm");
+  var r = document.getElementById("footer");
+  if (p.style.display === "none") {
+    p.style.display = "block";
+    q.style.display = "none";
+    r.style.display = "block";
+  } else {
+    p.style.display = "none";
+    q.style.display = "block";
+  }
+}
+
+var today = new Date();
+  var expiry = new Date(today.getTime() + 10 * 60 * 1000); // plus 30 days
+
+  function setCookie(name, value)
+  {
+    document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+  }
+  
+function myFunction() {
+  var coffee = parseInt(document.getElementById("coffee").value);
+  var tea = parseInt(document.getElementById("tea").value);
+  var milk = parseInt(document.getElementById("milk").value);
+  var order = document.getElementById("order");
+  var orders = document.getElementById("orders");
+  var res = coffee + tea + milk;
+  var result = res * 25; 
+   var min = document.getElementById("min");
+   var mina = document.getElementById("mina");
+   var minb = document.getElementById("minb");
+  document.getElementById("cost").innerHTML = result;
+  if (((milk >= 25)&&(coffee >= 25)&&(tea >= 25))||((milk >= 25)&&(coffee == 0)&&(tea == 0))||((milk == 0)&&(coffee >= 25)&&(tea == 0))||((milk == 0)&&(coffee == 0)&&(tea >= 25))||((milk >= 25)&&(coffee == 0)&&(tea >= 25))||((milk == 0)&&(coffee >= 25)&&(tea >= 25))||((milk >= 25)&&(coffee >= 25)&&(tea == 0))) {
+  order.style.display = "block";
+  } else {
+  order.style.display = "none";    
+  }
+  if (((milk >= 25)&&(coffee >= 25)&&(tea >= 25))||((milk >= 25)&&(coffee == 0)&&(tea == 0))||((milk == 0)&&(coffee >= 25)&&(tea == 0))||((milk == 0)&&(coffee == 0)&&(tea >= 25))||((milk >= 25)&&(coffee == 0)&&(tea >= 25))||((milk == 0)&&(coffee >= 25)&&(tea >= 25))||((milk >= 25)&&(coffee >= 25)&&(tea == 0))) {
+  orders.style.display = "none";
+  } else {
+  orders.style.display = "block";    
+  }
+  
+  if (coffee >= 25){
+  min.style.display = "none";
+  } else {
+  min.style.display = "block";    
+  }
+  if (tea >= 25){
+  mina.style.display = "none";
+  } else {
+  mina.style.display = "block";    
+  }
+  if (milk >= 25){
+  minb.style.display = "none";
+  } else {
+  minb.style.display = "block";    
+  }
+
+  setCookie("coffee", coffee);
+    setCookie("tea", tea);
+    setCookie("milk", milk);
+    return true;
+}
+
+  </script>
+
+</head>
+
+
+
+<body>
+
+<nav class="navbar navbar-default" style="background-color: #E31E24;">
+  <div class="container-fluid">
+    <div class="brand-centered">
+      <a class="navbar-brand" href="#"><img style="margin-right: 10px; padding: 0;" src="./logo.png" alt="Madras Coffee House"></a>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li><a href="./index.html"><i class="fa fa-arrow-left"></i></a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<section class="menu">
+  <div class="container">
+  <h4 class="menu-title">Main Menu</h4>
+  <br>
+  <hr>
+  <br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Qty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><img src="./coffee.jpg" height="40px" width="40px"></th>
+      <td>Coffee</td>
+      <td>&#8377; 25</td>
+      <td id="myinc"  onclick="Functionc()"><i  class="fa fa-plus"></i></td>
+      <td id="myinpc" style="display: none;"><input type="number" class="form-control" min="25" id="coffee" onchange="myFunction()" value="0" name="qty"><p id="min" style="text-align: center; color: red;">Please order minimum 25 Cups</p></td>
+    </tr>
+    <tr>
+      <th scope="row"><img src="./tea.jpg" height="40px" width="40px"></th>
+      <td>Tea</td>
+      <td>&#8377; 25</td>
+      <td id="myint"  onclick="Functiont()"><i  class="fa fa-plus"></i></td>
+      <td id="myinpt" style="display: none;"><input type="number" class="form-control" min="25" id="tea" onchange="myFunction()" value="0" name="qty"><p id="mina" style="text-align: center; color: red;">Please order minimum 25 Cups</p></td>
+    </tr>
+    <tr>
+      <th scope="row"><img src="./milk.png" height="40px" width="40px"></th>
+      <td>Milk</td>
+      <td>&#8377; 25</td>
+      <td id="myinm"  onclick="Functionm()"><i  class="fa fa-plus"></i></td>
+      <td id="myinpm" style="display: none;"><input type="number" class="form-control" min="25" id="milk" onchange="myFunction()" value="0" name="qty"><p id="minb" style="text-align: center; color: red;">Please order minimum 25 Cups</p></td>
+    </tr>
+  </tbody>
+</table>
+
+<!--<div class="container ">
+  <a href="snack.html">
+  <div class="row addmore">
+    <div class="col-lg-3 col-sm-3 col-xs-3">
+      <i class="fa fa-plus" style="font-size: 4rem;float: right;"></i>
+    </div>
+    <div class="col-lg-9 col-sm-9 col-xs-9">
+     <p style="float: left;">Click here to add our delicious sweets and snacks</p> 
+    </div>
+    
+  </div>
+  </a>
+
+  
+</div>-->
+
+<div id="footer" class="container footter" style="display: none;">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <h4 style="color: black;">Main Menu</h4>
+        <p>Minimum 25 Cups to Order</p>
+      
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <h3 style="color: red;font-weight: 800;"> &#8377; <span id="cost">0</span>  </h3>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <h3><a type="button" href="smallorder.php" class="btn btn-danger" id="order" style="display: none;width: 100px;" type="submit">Order Now</a></h3>
+      <h3><a type="button"  class="btn btn-info" id="orders" style="display: none;width: 100px;" type="submit">Order Now</a></h3>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

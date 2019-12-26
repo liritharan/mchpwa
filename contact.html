@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Madras Coffee House</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel='stylesheet' href='./style.css' type='text/css' media='all' />
+
+  
+
+</head>
+
+
+
+<body>
+
+<nav class="navbar navbar-default" style="background-color: #E31E24;">
+  <div class="container-fluid">
+    <div class="brand-centered">
+      <a class="navbar-brand" href="#"><img style="margin-right: 10px; padding: 0;" src="./logo.png" alt="Madras Coffee House"></a>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li><a href="#" onclick="history.go(-1)"><i class="fa fa-arrow-left"></i></a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <div class="container" style="background-color: white;">
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well well-sm">
+          <form class="form-horizontal" action="store.php" method="post">
+          <fieldset>
+            <legend class="text-center">Complete Your order</legend>
+    
+            <!-- Name input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="name">Name</label>
+              <div class="col-md-9">
+                <input id="name" name="name" type="text" placeholder="Name" class="form-control" required>
+              </div>
+            </div>
+    
+            <!-- Email input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="email">Phone</label>
+              <div class="col-md-9">
+                <input id="number" pattern="[0-9]{}" maxlength="10" name="mob" type="text" placeholder="Phone" class="form-control" required>
+              </div>
+            </div>
+    
+            <!-- Message body -->
+            <!-- Name input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="name">Email</label>
+              <div class="col-md-9">
+                <input id="email" name="email" type="email" placeholder="Email Id" class="form-control" required>
+              </div>
+            </div>
+             <div class="form-group">
+              <label class="col-md-3 control-label" for="name">Event</label>
+              <div class="col-md-9">
+                <input id="event" name="event" type="text" placeholder="Wedding, Birthday Party" class="form-control" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="message">Address</label>
+              <div class="col-md-9">
+                <textarea class="form-control" id="message" name="address" placeholder="Please enter your address here." rows="5" required></textarea>
+              </div>
+            </div>
+    
+            <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-right">
+                <button type="submit" name="submit" class="btn btn-primary btn-lg">Submit</button>
+              </div>
+            </div>
+          </fieldset>
+          </form>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+</body>
+</html>
